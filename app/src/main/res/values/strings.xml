@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Book Application Kotlin</string>
+    <string name="new_sign_up">No Account? <b>Sign Up</b></string>
 </resources>

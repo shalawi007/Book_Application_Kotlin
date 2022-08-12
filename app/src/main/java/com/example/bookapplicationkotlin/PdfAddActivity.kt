@@ -229,9 +229,10 @@ class PdfAddActivity : AppCompatActivity() {
             .setItems(categoriesArray){dialog, which->
                 //handle item click
                 //get clicked item
-                selectedCategoryId = categoryArrayList[which].category
-                selectedCategoryTitle = categoryArrayList[which].id
+                selectedCategoryId = categoryArrayList[which].id
+                selectedCategoryTitle = categoryArrayList[which].category
                 //set category to txt view
+                binding.categoryTv.text = selectedCategoryTitle
                 Log.d(TAG, "categoryPickDialog: Selected Category ID: $selectedCategoryId")
                 Log.d(TAG, "categoryPickDialog: Selected Category Title: $selectedCategoryTitle")
 

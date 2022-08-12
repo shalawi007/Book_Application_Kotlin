@@ -64,7 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginTop="225dp">
+        android:layout_marginTop="225dp"
+        app:hintEnabled="false">
 
         <EditText
             android:id="@+id/titleEt"
@@ -113,18 +114,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/descriptionTil"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
         android:background="@drawable/shape_edittext"
         android:drawableStart="@drawable/ic_category_gr"
         android:drawableEnd="@drawable/ic_down_gray"
         android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:hint="Book Category"
         android:gravity="center_vertical"
+        android:hint="Book Category"
+        android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
 
     <!--upload Pdf Button-->
     <Button
@@ -135,7 +136,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/shape_button01"
         android:text="Upload"
         android:textColor="@color/white"/>
 

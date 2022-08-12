@@ -17,7 +17,7 @@ class PdfListAdminActivity : AppCompatActivity() {
     private lateinit var binding:ActivityPdfListBinding
 
     private companion object{
-        const val  TAG = "PDF_LIST_ADMIN"
+        const val  TAG = "PDF_LIST_ADMIN_TAG"
     }
 
     //category id, title
@@ -64,9 +64,13 @@ class PdfListAdminActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                TODO("Not yet implemented")
+
             }
         })
+        //handle click back
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
+        }
 
     }
 

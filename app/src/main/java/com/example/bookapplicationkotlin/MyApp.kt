@@ -1,12 +1,15 @@
 package com.example.bookapplicationkotlin
 
 import android.app.Application
+import android.app.ProgressDialog
+import android.content.Context
 import android.icu.text.CaseMap
 import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import com.github.barteksc.pdfviewer.PDFView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -15,6 +18,8 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import java.sql.Timestamp
 import java.util.*
+import kotlin.collections.HashMap
+import kotlin.math.log
 
 class MyApp : Application() {
 
@@ -123,10 +128,89 @@ class MyApp : Application() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        TODO("Not yet implemented")
+
                     }
                 })
 
+        }
+
+
+        fun deleteBook(context: Context,bookId: String, bookUrl: String, bookTitle: String){
+            /*param details*/
+
+            val TAG = "DELETE_BOOK_TAG"
+
+            Log.d(TAG, "deleteBook: deleteing...")
+
+            //progressdiaglog
+            val progressDialog = ProgressDialog(context)
+            progressDialog.setTitle("Please wait")
+            progressDialog.setMessage("Deleting $bookTitle...")
+            progressDialog.setCanceledOnTouchOutside(false)
+            progressDialog.show()
+
+            Log.d(TAG, "deleteBook: Deleting from storage...")
+            val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(bookUrl)
+            storageReference.delete()
+                .addOnSuccessListener {
+                    Log.d(TAG, "deleteBook: deleted from storage..")
+                    Log.d(TAG, "deleteBook: Deleting from db now ....")
+
+                    val ref = FirebaseDatabase.getInstance().getReference("Books")
+                    ref.child(bookId)
+                        .removeValue()
+                        .addOnSuccessListener {
+                            progressDialog.dismiss()
+                            Log.d(TAG, "deleteBook: deleted successfully .. ")
+                            Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
+                        }
+                        .addOnFailureListener {e->
+                            progressDialog.dismiss()
+                            Log.d(TAG, "deleteBook: Failed to delete due to ${e.message}")
+                            Toast.makeText(context, "Failed to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+
+                }
+                .addOnFailureListener {e->
+                    progressDialog.dismiss()
+                    Log.d(TAG, "deleteBook: Failed to delete due to ${e.message}")
+                    Toast.makeText(context, "Failed to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
+
+                }
+        }
+
+        fun incrementBookViewCount(bookId: String){
+            //get current views
+            val ref = FirebaseDatabase.getInstance().getReference("Books")
+            ref.child(bookId)
+                .addListenerForSingleValueEvent(object :ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        //get views count
+                        var viewsCount = "${snapshot.child("viewsCount").value}"
+
+                        if (viewsCount == ""|| viewsCount == "null"){
+                            viewsCount ="0";
+
+                        }
+
+                        //2 increment views count
+                        val newViewsCount = viewsCount.toLong()+1
+
+                        //setup data for update
+                        val hashMap = HashMap<String, Any>()
+                        hashMap["viewsCount"] = newViewsCount
+
+                        //set to db
+                        val dbRef = FirebaseDatabase.getInstance().getReference("Books")
+                        dbRef.child(bookId)
+                            .updateChildren(hashMap)
+
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+                })
         }
 
     }

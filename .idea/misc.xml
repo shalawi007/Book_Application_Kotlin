@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1565" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/ic_attach_white.xml" value="0.1595" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/ic_book_white.xml" value="0.182" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/ic_category_white.xml" value="0.1335" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/ic_delete_white.xml" value="0.11" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/ic_down_gray.xml" value="0.1595" />
@@ -20,17 +21,24 @@
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/shape_edittext.xml" value="0.1" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/shape_toolbar.xml" value="0.1" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/shape_toolbar1.xml" value="0.1" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/tab_background_selected.xml" value="0.205" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/drawable/tab_selector.xml" value="0.205" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_category_add.xml" value="0.22" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_login.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_main.xml" value="0.24608294930875577" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_pdf_add.xml" value="0.3171171171171171" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_pdf_detail.xml" value="0.25" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_pdf_edit.xml" value="0.20296570898980537" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_pdf_list.xml" value="0.25" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_pdf_view.xml" value="0.2894399315946986" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_splash.xml" value="0.24722222222222223" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/activity_user_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/fragment_book_user.xml" value="0.3009833262077811" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/row_category.xml" value="0.26481481481481484" />
         <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/row_pdf_admin.xml" value="0.3009833262077811" />
+        <entry key="..\:/Users/shoal/AndroidStudioProjects/BookApplicationKotlin/app/src/main/res/layout/row_pdf_user.xml" value="0.3009833262077811" />
       </map>
     </option>
   </component>

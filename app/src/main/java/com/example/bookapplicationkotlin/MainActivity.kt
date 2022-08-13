@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
 
     // login click
         binding.logBtn.setOnClickListener {
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
 
         }
     // skip click to continue to main screen
         binding.skipBtn.setOnClickListener {
-            startActivity(Intent(this,UserDashboardActivity::class.java))
+            startActivity(Intent(this, UserDashboardActivity::class.java))
 
         }
 

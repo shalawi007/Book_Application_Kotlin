@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import android.widget.ImageButton
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookapplicationkotlin.databinding.RowPdfAdminBinding
 
@@ -99,7 +97,7 @@ class AdapterPdfAdmin :RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin> , Fi
                 //handle item click
                 if (pos == 0){
                     //edit is clicked
-                    val intent = Intent(context,PdfEditActivity::class.java)
+                    val intent = Intent(context, PdfEditActivity::class.java)
                     intent.putExtra("bookId", bookId) //passed bookedId for edit
                     context.startActivity(intent)
 

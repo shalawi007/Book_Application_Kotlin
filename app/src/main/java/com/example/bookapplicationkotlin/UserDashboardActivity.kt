@@ -2,15 +2,13 @@ package com.example.bookapplicationkotlin
 
 import android.content.Context
 import android.content.Intent
-import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.bookapplicationkotlin.databinding.ActivityAdminDashboardBinding
 import com.example.bookapplicationkotlin.databinding.ActivityUserDashboardBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -46,6 +44,10 @@ class UserDashboardActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+        //Profile Btn click
+        binding.profileBtn.setOnClickListener{
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
     }
@@ -167,11 +169,19 @@ class UserDashboardActivity : AppCompatActivity() {
         if (firebaseUser == null){
             //not logged, Anonymous user can stay
             binding.subTitleTv.text = "Not Logged in"
+
+            //hide profile, logout
+            binding.profileBtn.visibility = View.GONE
+            binding.logoutBtn.visibility = View.GONE
+
         }
         else{
             // logged in
             val email = firebaseUser.email
             binding.subTitleTv.text =email
+            //show profile btn, logout
+            binding.profileBtn.visibility = View.VISIBLE
+            binding.logoutBtn.visibility = View.VISIBLE
         }
     }
 }

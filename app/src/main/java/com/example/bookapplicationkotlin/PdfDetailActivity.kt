@@ -39,7 +39,7 @@ class PdfDetailActivity : AppCompatActivity() {
         }
         //handle click open pdf view act
         binding.readBookBtn.setOnClickListener{
-            val intent = Intent(this,PdfViewActivity::class.java)
+            val intent = Intent(this, PdfViewActivity::class.java)
             intent.putExtra("bookId", bookId);
             startActivity(intent)
         }
@@ -67,9 +67,15 @@ class PdfDetailActivity : AppCompatActivity() {
                     //load pdf cat
                     MyApp.loadCategory(categoryId, binding.categoryTv)
                     //Load pdf thumbnail pg count
-                    MyApp.loadPdfFromUrlSinglePage("$url","$title",binding.pdfView,binding.progressBar,binding.pagesTv)
+                    MyApp.loadPdfFromUrlSinglePage(
+                        "$url",
+                        "$title",
+                        binding.pdfView,
+                        binding.progressBar,
+                        binding.pagesTv
+                    )
                     //load pdf size
-                    MyApp.loadPdfSize("$url","$title",binding.sizeTv)
+                    MyApp.loadPdfSize("$url", "$title", binding.sizeTv)
 
                     //set data
                     binding.titleTv.text = title

@@ -9,7 +9,6 @@ import android.widget.Toast
 import com.example.bookapplicationkotlin.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -132,7 +131,7 @@ class RegisterActivity : AppCompatActivity() {
                 // user info saved
                 progressDialog.dismiss()
                 Toast.makeText(this,"Account created successfully..",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@RegisterActivity,UserDashboardActivity::class.java))
+                startActivity(Intent(this@RegisterActivity, UserDashboardActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e->

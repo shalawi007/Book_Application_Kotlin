@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import com.example.bookapplicationkotlin.databinding.ActivityAdminDashboardBinding
-import com.example.bookapplicationkotlin.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -67,12 +66,16 @@ class AdminDashboardActivity : AppCompatActivity() {
 
         // Add Category Click
         binding.addCatBtn.setOnClickListener {
-            startActivity(Intent(this,CategoryAddActivity::class.java))
+            startActivity(Intent(this, CategoryAddActivity::class.java))
 
         }
         // add pdf page click
         binding.addPdfFab.setOnClickListener {
             startActivity(Intent(this, PdfAddActivity::class.java))
+        }
+        //Profile Btn click
+        binding.profileBtn.setOnClickListener{
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
     }
@@ -111,7 +114,7 @@ class AdminDashboardActivity : AppCompatActivity() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null){
             //not logged in, direct to main
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         else{
